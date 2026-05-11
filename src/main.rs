@@ -1,4 +1,5 @@
 use clap::{Parser, Subcommand};
+use rand::Rng;
 
 #[derive(Parser)]
 #[command(name = "randy")]
@@ -18,11 +19,17 @@ enum Commands {
 }
 
 fn main() {
+    let mut rng = rand::thread_rng();
+
     let cli = Cli::parse();
 
     match &cli.command {
         Commands::Dice { nb_faces } => {
-            println!("Launch a dice of {} faces", nb_faces);
+            println!("Launch a dice of {} faces...", nb_faces);
+
+            let result = rng.gen_range(1..(nb_faces+1));
+
+            println!("Result : {}", result);
         }
     }
 }
