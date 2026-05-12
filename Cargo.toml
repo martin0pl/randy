@@ -1,7 +1,13 @@
 [package]
 name = "randy"
-version = "0.2.1"
+version = "0.2.2"
+authors = ["martin0pl"]
 edition = "2024"
+
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1
 
 [dependencies]
 clap = { version = "4.0", features = ["derive"] }
