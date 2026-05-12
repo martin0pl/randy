@@ -9,6 +9,6 @@ Randy is a terminal-based command-line interface (CLI) to generate random things
 3. Give it the permission to be run with `chmod +x randy`
 4. Execute `randy` anywhere on your device
 
-## Functionnality
+## Functionality
 
 - Launch a dice
