@@ -19,7 +19,9 @@ enum Commands {
         /// Number of faces of the dice
         #[arg(value_parser = clap::value_parser!(u32).range(1..),short, long, default_value_t = 6)]
         nb_faces: u32,
-    }
+    },
+    /// Flip a coin
+    Coin,
 }
 
 fn main() {
@@ -34,6 +36,16 @@ fn main() {
             let result = rng.gen_range(1..(nb_faces+1));
 
             println!("Result : {}", result);
+        },
+        Commands::Coin => {
+            let result = rng.gen_range(0..=1);
+
+            if result == 0 {
+                println!("Heads !");
+            }
+            else {
+                println!("Tails !");
+            }
         }
     }
 }

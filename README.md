@@ -12,3 +12,4 @@ Randy is a terminal-based command-line interface (CLI) to generate random things
 ## Functionality
 
 - Launch a dice
+- Flip a coin
