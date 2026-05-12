@@ -17,7 +17,8 @@ enum Commands {
     /// Launch a dice
     Dice {
         /// Number of faces of the dice
-        nb_faces: i32,
+        #[arg(value_parser = clap::value_parser!(u32).range(1..))]
+        nb_faces: u32,
     }
 }
 
