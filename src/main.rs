@@ -1,9 +1,13 @@
 use clap::{Parser, Subcommand};
 use rand::Rng;
 
+const DESCRIPTION: &str = "CLI tool to generate random things anywhere on your device\nMade by martin0pl\nGithub : https://github.com/martin0pl/randy";
+
+const VERSION: &str = "0.2.0";
+
 #[derive(Parser)]
 #[command(name = "randy")]
-#[command(about = "CLI tool to generate random things anywhere on your device", long_about = None)]
+#[command(about = DESCRIPTION, long_about = None)]
 struct Cli {
     #[command(subcommand)]
     command: Commands,
@@ -15,7 +19,7 @@ enum Commands {
     Dice {
         /// Number of faces of the dice
         nb_faces: i32,
-    },
+    }
 }
 
 fn main() {
